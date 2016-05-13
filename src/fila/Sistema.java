@@ -146,7 +146,6 @@ public class Sistema {
         } else {
             System.out.println("Caixa aberto.");
             System.out.println("Atendimento fechado. Abra o atendimento primeiro.");
-            //
         }
 //        if ((opcaoCaixa == true) && (opcaoAtendimento == true)) {
 //            System.out.println("Caixa aberto.");
