@@ -96,6 +96,7 @@ public class Sistema {
             opcaoCaixa = true;
             System.out.println("Caixa aberto.");
             System.out.println("Atendimento fechado.");
+            abrirCaixa();
             //distribuirFichas();
         } else if ((opcaoCaixa == true) && (opcaoAtendimento == true)){
             System.out.println("Caixa já está aberto. Tente outra opção!!!");
