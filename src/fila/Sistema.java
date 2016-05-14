@@ -13,7 +13,7 @@ public class Sistema {
 
         int opcao;
 
-        //Scanner entrada = new Scanner(System.in);
+        Scanner entrada = new Scanner(System.in);
         //Menu mMenu = new Menu();
 
         do {
@@ -30,13 +30,13 @@ public class Sistema {
                 System.out.print(" Escolha opção desejada: ");
 
 
-                //opcao = entrada.nextInt();
+                opcao = entrada.nextInt();
 
                 switch (opcao) {
                     case 1:
                         fimdeLinhas();
                         System.out.println("Opção 1!!!");
-                        opcaoCaixa == true
+                        //opcaoCaixa = true;
                         chamaOpcao1();
                         //mMenu.add(true);
                         break;
@@ -92,21 +92,15 @@ public class Sistema {
     }
 
     public void chamaOpcao1() {
-        if ((opcaoCaixa == true)) {
+        if ((!opcaoCaixa)) {
+            opcaoCaixa = true;
             System.out.println("Caixa aberto.");
-            System.out.println("Atendimento fechado");
+            System.out.println("Atendimento fechado.");
+            //distribuirFichas();
         } else {
             System.out.println("Caixa já está aberto. Tente outra opção!!!");
+            System.out.println("Atendimento fechado.");
         }
-//        if ((!opcaoCaixa)) {
-//            System.out.println("Caixa aberto.");
-//            System.out.println("Atendimento fechado.");
-//            opcaoCaixa = true;
-//        } else {
-//            System.out.println("Caixa já está aberto. Tente outra opção!!!");
-//            System.out.println("Atendimento fechado.");
-//            //distribuirFichas();
-//        }
     }
 
     public void chamaOpcao2() {
@@ -193,6 +187,9 @@ public class Sistema {
         }
     }
 
+    public void abrirCaixa(){
+        
+    }
     
     
     public void distribuirFichas() {
