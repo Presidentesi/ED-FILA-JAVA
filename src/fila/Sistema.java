@@ -133,23 +133,6 @@ public class Sistema {
             System.out.println("Caixa aberto.");
             System.out.println("Atendimento já está aberto. Tente outra opção!!!");
         }
-//        if (!opcaoCaixa) == (opcaoCaixa == false) {
-//            System.out.println("False");
-//        if (opcaoCaixa) == (opcaoCaixa == true) {
-//            System.out.println("True");
-//        }
-        
-//        if ((opcaoCaixa == true) && (opcaoAtendimento == false)) {
-//            System.out.println("Caixa aberto.");
-//            System.out.println("Atendimento aberto.");
-//            opcaoAtendimento = true;
-//        } else if ((opcaoCaixa == true) && (opcaoAtendimento == true)) {
-//            System.out.println("Caixa aberto.");
-//            System.out.println("Atendimento já está aberto. Tente outra opção!!!");
-//        } else {
-//            System.out.println("Caixa fechado. Abra o caixa primeiro.");
-//            System.out.println("Atendimento fechado.");
-//        }
     }
 
     public void chamaOpcao4() {
@@ -157,24 +140,13 @@ public class Sistema {
             System.out.println("Caixa aberto.");
             System.out.println("Atendimento fechado.");
             opcaoAtendimento = false;
-        } else if ((opcaoCaixa == false) && (opcaoAtendimento == false)) {
-            System.out.println("Caixa fechado.");
+        } else if ((opcaoCaixa == true) && (opcaoAtendimento == false)) {
+            System.out.println("Caixa aberto.");
             System.out.println("Atendimento já está fechado. Tente outra opção!!!");
         } else {
-            System.out.println("Caixa aberto.");
-            System.out.println("Atendimento fechado. Abra o atendimento primeiro.");
+            System.out.println("Caixa fechado.");
+            System.out.println("Atendimento já está fechado. Tente outra opção!!!");
         }
-//        if ((opcaoCaixa == true) && (opcaoAtendimento == true)) {
-//            System.out.println("Caixa aberto.");
-//            System.out.println("Atendimento fechado.");
-//            opcaoAtendimento = false;
-//        } else if ((opcaoCaixa == false) && (opcaoAtendimento == false))  {
-//            System.out.println("Caixa 2.");
-//            System.out.println("Atendimento já está aberto.\nTente outra opção!!!");
-//        } else {
-//            System.out.println("Caixa fechado.");
-//            System.out.println("Atendimento fechado");
-//        }
     }
 
     public void chamaOpcao5() {
