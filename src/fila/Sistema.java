@@ -7,7 +7,8 @@ public class Sistema {
 
     boolean opcaoCaixa;
     boolean opcaoAtendimento;
-    boolean opcao3, opcao4, opcao5, opcao6, opcao7, opcao8;
+    
+    Mensagem mMsg = new Mensagem();
 
     public void chamarMenu() {
 
@@ -15,7 +16,11 @@ public class Sistema {
 
         Scanner entrada = new Scanner(System.in);
         //Menu mMenu = new Menu();
-
+        fimdeLinhas();
+        System.out.println("Caixa");
+        System.out.println("Atendimento");
+        System.out.println("Senha");
+                
         do {
                 System.out.println("====== MENU PRINCIPAL ======");
                 System.out.println(" 1 - ABRIR O CAIXA");
@@ -91,67 +96,94 @@ public class Sistema {
         } while (opcao != 8);
     }
 
+    //metodo para abrir o caixa
     public void chamaOpcao1() {
         if ((!opcaoCaixa) && (opcaoAtendimento == false)) {
             opcaoCaixa = true;
             System.out.println("Caixa aberto.");
             System.out.println("Atendimento fechado.");
+            System.out.println("Senha");
             abrirCaixa();
-            //distribuirFichas();
         } else if ((opcaoCaixa == true) && (opcaoAtendimento == true)){
             System.out.println("Caixa já está aberto. Tente outra opção!!!");
             System.out.println("Atendimento aberto.");
-            
+            System.out.println("Senha");
         } else {
             System.out.println("Caixa já está aberto. Tente outra opção!!!");
             System.out.println("Atendimento fechado.");
+            System.out.println("Senha");
         }
     }
 
+    //metodo para fechar o caixa
     public void chamaOpcao2() {
         if ((opcaoCaixa == true) && (opcaoAtendimento == false)) {
             opcaoCaixa = false;
             System.out.println("Caixa fechado.");
             System.out.println("Atendimento fechado.");
+            System.out.println("Senha");
         } else if ((opcaoCaixa == true) && (opcaoAtendimento == true)){
             System.out.println("Caixa aberto.");
             System.out.println("Atendimento aberto!!! Feche o atendimento primeiro.");
+            System.out.println("Senha");
         } else {
             System.out.println("Caixa já está fechado. Tente outra opção!!!");
             System.out.println("Atendimento fechado");
+            System.out.println("Senha");
         }
     }
 
+    //metodo para abrir o atendimento
     public void chamaOpcao3() {
         if ((opcaoCaixa == true) && (opcaoAtendimento == false)){
             opcaoAtendimento = true;
             System.out.println("Caixa aberto.");
             System.out.println("Atendimento aberto.");
+            System.out.println("Senha");
         } else if ((opcaoCaixa == false) && (opcaoAtendimento == false)) {
             System.out.println("Caixa fechado. Abra o caixa primeiro.");
             System.out.println("Atendimento fechado.");
+            System.out.println("Senha");
         } else {
             System.out.println("Caixa aberto.");
             System.out.println("Atendimento já está aberto. Tente outra opção!!!");
+            System.out.println("Senha");
         }
     }
 
+    //metodo para encerrar o atendimento
     public void chamaOpcao4() {
         if ((opcaoCaixa == true) && (opcaoAtendimento == true)) {
             System.out.println("Caixa aberto.");
             System.out.println("Atendimento fechado.");
+            System.out.println("Senha");
             opcaoAtendimento = false;
         } else if ((opcaoCaixa == true) && (opcaoAtendimento == false)) {
             System.out.println("Caixa aberto.");
             System.out.println("Atendimento já está fechado. Tente outra opção!!!");
+            System.out.println("Senha");
         } else {
             System.out.println("Caixa fechado.");
             System.out.println("Atendimento já está fechado. Tente outra opção!!!");
+            System.out.println("Senha");
         }
     }
 
+    //metodo para emitir senha comercial
     public void chamaOpcao5() {
-        System.out.println("Emitida senha comercial.");
+        if ((opcaoCaixa == false) && ( opcaoAtendimento == false)) {
+            mMsg.caixaFechadoAtendimentoFechado();
+            mMsg.senhaEspereCaixaAbrir();
+        } else if ((opcaoCaixa == false) && (opcaoAtendimento == true)) {
+            System.out.println("2");
+            System.out.println("2-A senha não pode ser emitida! O caixa está fechado.");
+        } else if ((opcaoCaixa == true) && (opcaoAtendimento == true)){
+            mMsg.caixaEAtendimentoAbertos();
+            System.out.println("1-Emitida senha comercial.");
+        } else {
+            mMsg.caixaAbertoAtendimentoFechado();
+            mMsg.senhaEspereAtendimentoAbrir();
+        }
     }
 
     public void chamaOpcao6() {
