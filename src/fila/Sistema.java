@@ -7,12 +7,14 @@ public class Sistema {
     
     boolean opcaoCaixa;
     boolean opcaoAtendimento;
+    boolean opcaoSair;
     
     Mensagem mMsg = new Mensagem();
     
     public void chamarMenu() {
         
         int opcaoMenu;
+        
         
         Scanner entrada = new Scanner(System.in);
         //Menu mMenu = new Menu();
@@ -22,7 +24,9 @@ public class Sistema {
         System.out.println("Atendimento");
         System.out.println("Senha");
         
+        
         do {
+            //try{
             System.out.println("====== MENU PRINCIPAL ======");
             System.out.println(" 1 - ABRIR O CAIXA");
             System.out.println(" 2 - FECHAR O CAIXA");
@@ -38,15 +42,18 @@ public class Sistema {
             opcaoMenu = entrada.nextInt();
             
             seletorDeOpcoes(opcaoMenu);
-            
-        } while (opcaoMenu != 8);
+//            } catch (InputMismatchException e){
+//                e.printStackTrace();
+//            }
+        } while (!opcaoSair);
     }
     
+    //metodo para chamar o seletor de opçoes
     public void seletorDeOpcoes(int opcaoMenu) {
         switch (opcaoMenu) {
             case 1:
                 fimdeLinhas();
-                System.out.println("Opção 1!!!");
+                System.out.println("Opção 1");
                 //opcaoCaixa = true;
                 chamaOpcao1();
                 //mMenu.add(true);
@@ -54,43 +61,43 @@ public class Sistema {
             
             case 2:
                 fimdeLinhas();
-                System.out.println("Opção 2!!!");
+                System.out.println("Opção 2");
                 chamaOpcao2();
                 break;
             
             case 3:
                 fimdeLinhas();
-                System.out.println("Opção 3!!!");
+                System.out.println("Opção 3");
                 chamaOpcao3();
                 break;
             
             case 4:
                 fimdeLinhas();
-                System.out.println("Opção 4!!!");
+                System.out.println("Opção 4");
                 chamaOpcao4();
                 break;
             
             case 5:
                 fimdeLinhas();
-                System.out.println("Opção 5!!!");
+                System.out.println("Opção 5");
                 chamaOpcao5();
                 break;
             
             case 6:
                 fimdeLinhas();
-                System.out.println("Opção 6!!!");
+                System.out.println("Opção 6");
                 chamaOpcao6();
                 break;
             
             case 7:
                 fimdeLinhas();
-                System.out.println("Opção 7!!!");
+                System.out.println("Opção 7");
                 chamaOpcao7();
                 break;
             
             case 8:
                 fimdeLinhas();
-                System.out.println("Opção 8!!!");
+                System.out.println("Opção 8");
                 chamaOpcao8();
                 break;
             
@@ -196,10 +203,11 @@ public class Sistema {
     
     public void chamaOpcao8() {
         if ((opcaoCaixa == false) && (opcaoAtendimento == false)) {
-            System.out.println("Operações encarradas.");
+            System.out.println("Operações encerradas.");
+            opcaoSair = true;
             //System.exit(0);   
         } else {
-            System.out.println("Espere encerrar as operações do dia.");
+            System.out.println("Encerre as operações do dia.");
         }
     }
     
