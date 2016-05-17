@@ -4,16 +4,16 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Sistema {
-
+    
     boolean opcaoCaixa;
     boolean opcaoAtendimento;
     
     Mensagem mMsg = new Mensagem();
-
+    
     public void chamarMenu() {
-
-        int opcao;
-
+        
+        int opcaoMenu;
+        
         Scanner entrada = new Scanner(System.in);
         //Menu mMenu = new Menu();
         fimdeLinhas();
@@ -21,80 +21,83 @@ public class Sistema {
         System.out.println("Caixa");
         System.out.println("Atendimento");
         System.out.println("Senha");
-                
+        
         do {
-                System.out.println("====== MENU PRINCIPAL ======");
-                System.out.println(" 1 - ABRIR O CAIXA");
-                System.out.println(" 2 - FECHAR O CAIXA");
-                System.out.println(" 3 - ABRIR ATENDIMENTO");
-                System.out.println(" 4 - ENCERRAR ATENDIMENTO");
-                System.out.println(" 5 - EMITIR SENHA COMERCIAL");
-                System.out.println(" 6 - EMITIR SENHA PRIORITARIA");
-                System.out.println(" 7 - CHAMAR CLIENTE");
-                System.out.println(" 8 - SAIR");
-                System.out.println("============================");
-                System.out.print(" Escolha opção desejada: ");
-
-
-                opcao = entrada.nextInt();
-
-                switch (opcao) {
-                    case 1:
-                        fimdeLinhas();
-                        System.out.println("Opção 1!!!");
-                        //opcaoCaixa = true;
-                        chamaOpcao1();
-                        //mMenu.add(true);
-                        break;
-
-                    case 2:
-                        fimdeLinhas();
-                        System.out.println("Opção 2!!!");
-                        chamaOpcao2();
-                        break;
-
-                    case 3:
-                        fimdeLinhas();
-                        System.out.println("Opção 3!!!");
-                        chamaOpcao3();
-                        break;
-
-                    case 4:
-                        fimdeLinhas();
-                        System.out.println("Opção 4!!!");
-                        chamaOpcao4();
-                        break;
-
-                    case 5:
-                        fimdeLinhas();
-                        System.out.println("Opção 5!!!");
-                        chamaOpcao5();
-                        break;
-
-                    case 6:
-                        fimdeLinhas();
-                        System.out.println("Opção 6!!!");
-                        chamaOpcao6();
-                        break;
-
-                    case 7:
-                        fimdeLinhas();
-                        System.out.println("Opção 7!!!");
-                        chamaOpcao7();
-                        break;
-
-                    case 8:
-                        fimdeLinhas();
-                        System.out.println("Opção 8!!!");
-                        chamaOpcao8();
-                        break;
-
-                    default:
-                        fimdeLinhas();
-                        System.out.println("Opção inválida, tente novamente!!!");
-                }
-
-        } while (opcao != 8);
+            System.out.println("====== MENU PRINCIPAL ======");
+            System.out.println(" 1 - ABRIR O CAIXA");
+            System.out.println(" 2 - FECHAR O CAIXA");
+            System.out.println(" 3 - ABRIR ATENDIMENTO");
+            System.out.println(" 4 - ENCERRAR ATENDIMENTO");
+            System.out.println(" 5 - EMITIR SENHA COMERCIAL");
+            System.out.println(" 6 - EMITIR SENHA PRIORITARIA");
+            System.out.println(" 7 - CHAMAR CLIENTE");
+            System.out.println(" 8 - SAIR");
+            System.out.println("============================");
+            System.out.print(" Escolha opção desejada: ");
+            
+            opcaoMenu = entrada.nextInt();
+            
+            seletorDeOpcoes(opcaoMenu);
+            
+        } while (opcaoMenu != 8);
+    }
+    
+    public void seletorDeOpcoes(int opcaoMenu) {
+        switch (opcaoMenu) {
+            case 1:
+                fimdeLinhas();
+                System.out.println("Opção 1!!!");
+                //opcaoCaixa = true;
+                chamaOpcao1();
+                //mMenu.add(true);
+                break;
+            
+            case 2:
+                fimdeLinhas();
+                System.out.println("Opção 2!!!");
+                chamaOpcao2();
+                break;
+            
+            case 3:
+                fimdeLinhas();
+                System.out.println("Opção 3!!!");
+                chamaOpcao3();
+                break;
+            
+            case 4:
+                fimdeLinhas();
+                System.out.println("Opção 4!!!");
+                chamaOpcao4();
+                break;
+            
+            case 5:
+                fimdeLinhas();
+                System.out.println("Opção 5!!!");
+                chamaOpcao5();
+                break;
+            
+            case 6:
+                fimdeLinhas();
+                System.out.println("Opção 6!!!");
+                chamaOpcao6();
+                break;
+            
+            case 7:
+                fimdeLinhas();
+                System.out.println("Opção 7!!!");
+                chamaOpcao7();
+                break;
+            
+            case 8:
+                fimdeLinhas();
+                System.out.println("Opção 8!!!");
+                chamaOpcao8();
+                break;
+            
+            default:
+                fimdeLinhas();
+                System.out.println("Opção inválida, tente novamente!!!");
+        }
     }
 
     //metodo para abrir o caixa
@@ -104,7 +107,7 @@ public class Sistema {
             mMsg.caixaAbertoAtendimentoFechado();
             System.out.println("Senha");
             abrirCaixa();
-        } else if ((opcaoCaixa == true) && (opcaoAtendimento == true)){
+        } else if ((opcaoCaixa == true) && (opcaoAtendimento == true)) {
             System.out.println("Caixa aberto. Tente outra opção!!!");
             System.out.println("Atendimento aberto.");
             System.out.println("Senha");
@@ -121,7 +124,7 @@ public class Sistema {
             opcaoCaixa = false;
             mMsg.caixaFechadoAtendimentoFechado();
             System.out.println("Senha");
-        } else if ((opcaoCaixa == true) && (opcaoAtendimento == true)){
+        } else if ((opcaoCaixa == true) && (opcaoAtendimento == true)) {
             System.out.println("Caixa aberto.");
             System.out.println("Atendimento aberto!!! Feche o atendimento primeiro.");
             System.out.println("Senha");
@@ -134,7 +137,7 @@ public class Sistema {
 
     //metodo para abrir o atendimento
     public void chamaOpcao3() {
-        if ((opcaoCaixa == true) && (opcaoAtendimento == false)){
+        if ((opcaoCaixa == true) && (opcaoAtendimento == false)) {
             opcaoAtendimento = true;
             mMsg.caixaEAtendimentoAbertos();
             System.out.println("Senha");
@@ -168,13 +171,13 @@ public class Sistema {
 
     //metodo para emitir senha comercial
     public void chamaOpcao5() {
-        if ((opcaoCaixa == false) && ( opcaoAtendimento == false)) {
+        if ((opcaoCaixa == false) && (opcaoAtendimento == false)) {
             mMsg.caixaFechadoAtendimentoFechado();
             mMsg.senhaEspereCaixaAbrir();
         } else if ((opcaoCaixa == false) && (opcaoAtendimento == true)) {
             System.out.println("2");
             System.out.println("2-A senha não pode ser emitida! O caixa está fechado.");
-        } else if ((opcaoCaixa == true) && (opcaoAtendimento == true)){
+        } else if ((opcaoCaixa == true) && (opcaoAtendimento == true)) {
             mMsg.caixaEAtendimentoAbertos();
             System.out.println("1-Emitida senha comercial.");
         } else {
@@ -182,62 +185,61 @@ public class Sistema {
             mMsg.senhaEspereAtendimentoAbrir();
         }
     }
-
+    
     public void chamaOpcao6() {
         System.out.println("Emitida senha prioritária.");
     }
-
+    
     public void chamaOpcao7() {
         System.out.println("Próximo cliente.");
     }
-
+    
     public void chamaOpcao8() {
-        if ((opcaoCaixa == false) && (opcaoAtendimento == false)){
-         System.out.println("Operações encarradas.");
-         System.exit(0);   
+        if ((opcaoCaixa == false) && (opcaoAtendimento == false)) {
+            System.out.println("Operações encarradas.");
+            //System.exit(0);   
         } else {
             System.out.println("Espere encerrar as operações do dia.");
         }
     }
-
+    
     public void fimdeLinhas() {
         int qtdLinhas = 10;
         for (int i = 0; i < qtdLinhas; i++) {
             System.out.println("\n");
         }
     }
-
-    public void abrirCaixa(){
+    
+    public void abrirCaixa() {
         
     }
     
-    
     public void distribuirFichas() {
-
+        
         Scanner entrada = new Scanner(System.in);
         boolean error = true;
-
+        
         do {
             try {
                 System.out.println("Quantas fichas serão distribuidas (MIN-1 MAX-10) ? ");
                 int qtdFichas = entrada.nextInt();
-
+                
                 System.out.printf("Numero de fichas: %d\n", qtdFichas);
-
+                
                 if ((qtdFichas >= 1) && (qtdFichas <= 10)) {
                     System.out.printf("Voce distribuiu %d fichas para os clientes.\n", qtdFichas);
                 } else {
                     distribuirFichas();
                 }
                 System.exit(0);
-
+                
             } catch (InputMismatchException e) {
                 fimdeLinhas();
                 System.out.println("Desculpa, somente números!");
                 distribuirFichas();
             }
         } while (error);
-
+        
     }
-
+    
 }
