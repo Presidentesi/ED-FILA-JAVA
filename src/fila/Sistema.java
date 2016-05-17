@@ -17,6 +17,7 @@ public class Sistema {
         Scanner entrada = new Scanner(System.in);
         //Menu mMenu = new Menu();
         fimdeLinhas();
+        System.out.println("Opção");
         System.out.println("Caixa");
         System.out.println("Atendimento");
         System.out.println("Senha");
@@ -100,16 +101,15 @@ public class Sistema {
     public void chamaOpcao1() {
         if ((!opcaoCaixa) && (opcaoAtendimento == false)) {
             opcaoCaixa = true;
-            System.out.println("Caixa aberto.");
-            System.out.println("Atendimento fechado.");
+            mMsg.caixaAbertoAtendimentoFechado();
             System.out.println("Senha");
             abrirCaixa();
         } else if ((opcaoCaixa == true) && (opcaoAtendimento == true)){
-            System.out.println("Caixa já está aberto. Tente outra opção!!!");
+            System.out.println("Caixa aberto. Tente outra opção!!!");
             System.out.println("Atendimento aberto.");
             System.out.println("Senha");
         } else {
-            System.out.println("Caixa já está aberto. Tente outra opção!!!");
+            System.out.println("Caixa aberto. Tente outra opção!!!");
             System.out.println("Atendimento fechado.");
             System.out.println("Senha");
         }
@@ -119,15 +119,14 @@ public class Sistema {
     public void chamaOpcao2() {
         if ((opcaoCaixa == true) && (opcaoAtendimento == false)) {
             opcaoCaixa = false;
-            System.out.println("Caixa fechado.");
-            System.out.println("Atendimento fechado.");
+            mMsg.caixaFechadoAtendimentoFechado();
             System.out.println("Senha");
         } else if ((opcaoCaixa == true) && (opcaoAtendimento == true)){
             System.out.println("Caixa aberto.");
             System.out.println("Atendimento aberto!!! Feche o atendimento primeiro.");
             System.out.println("Senha");
         } else {
-            System.out.println("Caixa já está fechado. Tente outra opção!!!");
+            System.out.println("Caixa fechado. Tente outra opção!!!");
             System.out.println("Atendimento fechado");
             System.out.println("Senha");
         }
@@ -137,8 +136,7 @@ public class Sistema {
     public void chamaOpcao3() {
         if ((opcaoCaixa == true) && (opcaoAtendimento == false)){
             opcaoAtendimento = true;
-            System.out.println("Caixa aberto.");
-            System.out.println("Atendimento aberto.");
+            mMsg.caixaEAtendimentoAbertos();
             System.out.println("Senha");
         } else if ((opcaoCaixa == false) && (opcaoAtendimento == false)) {
             System.out.println("Caixa fechado. Abra o caixa primeiro.");
@@ -146,7 +144,7 @@ public class Sistema {
             System.out.println("Senha");
         } else {
             System.out.println("Caixa aberto.");
-            System.out.println("Atendimento já está aberto. Tente outra opção!!!");
+            System.out.println("Atendimento aberto. Tente outra opção!!!");
             System.out.println("Senha");
         }
     }
@@ -154,17 +152,16 @@ public class Sistema {
     //metodo para encerrar o atendimento
     public void chamaOpcao4() {
         if ((opcaoCaixa == true) && (opcaoAtendimento == true)) {
-            System.out.println("Caixa aberto.");
-            System.out.println("Atendimento fechado.");
+            mMsg.caixaAbertoAtendimentoFechado();
             System.out.println("Senha");
             opcaoAtendimento = false;
         } else if ((opcaoCaixa == true) && (opcaoAtendimento == false)) {
             System.out.println("Caixa aberto.");
-            System.out.println("Atendimento já está fechado. Tente outra opção!!!");
+            System.out.println("Atendimento fechado. Tente outra opção!!!");
             System.out.println("Senha");
         } else {
             System.out.println("Caixa fechado.");
-            System.out.println("Atendimento já está fechado. Tente outra opção!!!");
+            System.out.println("Atendimento fechado. Tente outra opção!!!");
             System.out.println("Senha");
         }
     }
@@ -195,8 +192,12 @@ public class Sistema {
     }
 
     public void chamaOpcao8() {
-        System.out.println("Operações encarradas.");
-        System.exit(0);
+        if ((opcaoCaixa == false) && (opcaoAtendimento == false)){
+         System.out.println("Operações encarradas.");
+         System.exit(0);   
+        } else {
+            System.out.println("Espere encerrar as operações do dia.");
+        }
     }
 
     public void fimdeLinhas() {

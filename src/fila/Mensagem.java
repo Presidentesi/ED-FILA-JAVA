@@ -30,4 +30,8 @@ public class Mensagem {
     public void senhaEspereAtendimentoAbrir(){
         System.out.println("A senha não pode ser emitida! Espere o atendimento abrir primeiro.");
     }
+    
+    public void tenteOutraOpcao(){
+        System.out.println(" Tente outra opção!!!");
+    }
 }
