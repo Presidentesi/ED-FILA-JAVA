@@ -1,6 +1,6 @@
 package fila;
 
-public class Mensagem {
+public class DisplayMensage {
 
     //mensagem de exibição do menu
     public void menuExibir() {
@@ -76,6 +76,10 @@ public class Mensagem {
     public void opcao() {
         System.out.printf("\nOpção. ");
     }
+    
+    public void cursor(){
+        System.out.printf("\n-> ");
+    }
 
     //metodos relacionado opcao1
     public void caixaAberto() {
@@ -125,18 +129,20 @@ public class Mensagem {
     public void senha() {
         System.out.printf("\nSenha ");
     }
+    
+
 
     public void senhaEspereCaixaAbrir() {
-        System.out.printf("\nSenha não pode ser emitida! Espere o caixa abrir primeiro.");
+        System.out.printf("Senha não pode ser emitida! Espere o caixa abrir primeiro.");
     }
 
     public void senhaEspereAtendimentoAbrir() {
-        System.out.printf("\nSenha não pode ser emitida! Espere o atendimento abrir primeiro.");
+        System.out.printf("Senha não pode ser emitida! Espere o atendimento abrir primeiro.");
     }
-
+    
     //metodos relacionados opcao7
     public void proximoCliente() {
-        System.out.printf("\nAtendimento aberto. Próximo cliente!!!.");
+        System.out.printf("Próximo cliente.");
     }
 
     //metodos relacionados opcao8
