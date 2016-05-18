@@ -15,6 +15,13 @@ public class Mensagem {
         System.out.println(" 8 - SAIR");
         System.out.println("============================");
     }
+    
+    public void immprimeOpcao1(){
+        System.out.println("Opção 1x");
+        System.out.printf("Caixa aberto.");
+        System.out.println("\nAtendimento fechado.");
+        System.out.println("Senha");
+    }
 
     //mensagem menu da opcao 1 e 4
     public void caixaAbertoAtendimentoFechado() {

@@ -12,6 +12,7 @@ public class Sistema {
     boolean opcaoAtendimento;
     boolean opcaoSair;
     int opcaoMenu;
+    int arrayIndiceFinal;
 
     Mensagem mMsg = new Mensagem();
     ArrayList<Integer> arrayOpcoes = new ArrayList<Integer>();
@@ -118,8 +119,9 @@ public class Sistema {
     public void chamaOpcao1() {
         if ((!opcaoCaixa) && (opcaoAtendimento == false)) {
             opcaoCaixa = true;
-            mMsg.caixaAbertoAtendimentoFechado();
-            System.out.println("Senha");
+            //mMsg.caixaAbertoAtendimentoFechado();
+            //System.out.println("Senha");
+            mMsg.immprimeOpcao1();
             abrirCaixa();
         } else if ((opcaoCaixa == true) && (opcaoAtendimento == true)) {
             System.out.println("Caixa aberto. Tente outra opção!!!");
@@ -233,14 +235,16 @@ public class Sistema {
         
         
         //inicializa variavel e armazena a ultima posicao do ArrayList de opcoes selecionadas
-        int arrayIndiceFinal = (arrayOpcoes.size()-1);
+        arrayIndiceFinal = (arrayOpcoes.size()-1);
         
 //        System.out.printf("\nUltima teclada: %d\n", arrayOpcoes.get(arrayIndiceFinal));
         
         System.out.println("Opção inválida, tente novamente!!!");
-        System.out.println("Caixa");
-        System.out.println("Atendimento");
-        System.out.println("Senha");
+        //System.out.println("Caixa");
+        //System.out.println("Atendimento");
+        //System.out.println("Senha");
+        
+        controleSelecao();
         
         //chama metodo para exibir o menu de opcoes
         mMsg.menuExibir();
@@ -253,14 +257,19 @@ public class Sistema {
         }
 
         fimdeLinhas();
+        
+        controleSelecao();
+    }
+    
+    public void controleSelecao(){
         //controle de selecao de multiplos casos
         if (arrayIndiceFinal == 0) {
-            System.out.println("Opção 1x");
-            mMsg.caixaAbertoAtendimentoFechado();
-            System.out.println("Senha");
+            //System.out.println("Opção 1x");
+            //mMsg.caixaAbertoAtendimentoFechado();
+            //System.out.println("Senha");
+            mMsg.immprimeOpcao1();
             //chamaOpcao1();
         } if (arrayIndiceFinal == 1) {
-            System.out.println("Opção");
             System.out.println("1");
             System.out.println("1");
             System.out.println("1");
@@ -304,14 +313,6 @@ public class Sistema {
         } else {
             return ;
         }
-
-        //      System.out.printf("Ultima teclada: %d\n", arrayOpcoes.get(arrayIndiceFinal));
-        //       System.out.printf("\nPenultima teclada: %d\n", arrayOpcoes.get(arrayOpcoes.size()));
-//        System.out.printf("\nOpcao do menu: %d\n", opcaoMenu);
-//        if( opcaoMenu == arrayOpcAnterior ) {
-//            System.out.println("2-Opcao fechar caixa.");
-//        }
-
     }
 
     public void fimdeLinhas() {
