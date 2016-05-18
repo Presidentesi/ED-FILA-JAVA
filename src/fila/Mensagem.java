@@ -70,7 +70,7 @@ public class Mensagem {
     }
 
     public void opcaoInvalida() {
-        System.out.println("Opção inválida, tente novamente!!!");
+        System.out.printf("\nOpção inválida, tente novamente!!!");
     }
 
     public void opcao() {

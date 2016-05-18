@@ -18,7 +18,7 @@ public class Sistema {
     Mensagem mMsg = new Mensagem();
     ArrayList<Integer> arrayOpcoes = new ArrayList<Integer>();
     Caixa mCaixa = new Caixa();
-    
+
     public void chamarCabecalhoMenu() {
         fimdeLinhas();
         System.out.println("Opção");
@@ -210,7 +210,7 @@ public class Sistema {
             mMsg.senhaEspereAtendimentoAbrir();
         }
     }
-    
+
     //metodo para emitir senha prioritária
     public void chamaOpcao6() {
         if ((opcaoCaixa == false) && (opcaoAtendimento == false)) {
@@ -231,7 +231,7 @@ public class Sistema {
 
     //metodo para chamar cliente
     public void chamaOpcao7() {
-        if((opcaoAtendimento == true)){
+        if ((opcaoAtendimento == true)) {
             mMsg.caixaAberto();
             mMsg.proximoCliente();
             mMsg.senha();
@@ -260,72 +260,76 @@ public class Sistema {
     public void chamaOpcaoInvalida() {
         //inicializa variavel e armazena a ultima posicao do ArrayList de opcoes selecionadas
         arrayIndiceFinal = (arrayOpcoes.size() - 1);
-        
+
         //chama mensagem
         mMsg.opcaoInvalida();
-        
+
+        if (arrayOpcoes.get(arrayOpcoes.size()) == null){
+            System.out.println("valor nulo");  
+        } else {
+            System.out.println("chamar controle");
+        }
         //metodo se selecao
         //controleSelecao();
 
         //chama metodo para exibir o menu de opcoes
         //mMsg.menuExibir();
-       
         //controle de excecao caso ocorra um erro durante a execucao da Thread
         //try {
         //    Thread.sleep(3000);
         //} catch (InterruptedException ex) {
         //    Logger.getLogger(Sistema.class.getName()).log(Level.SEVERE, null, ex);
-       // }
-        
+        // }
         //System.out.printf("%s ", arrayOpcoes.get(arrayOpcoes.size()));
-
         //fimdeLinhas();
         //controleSelecao();
-        
         //chamarMenu();
         //mMsg.etiquetaOpcao1();
         //fimdeLinhas();
-
         //controleSelecao();
         //arrayOpcoes.clear();
     }
 
     public void controleSelecao() {
         try {
-            
-                    //controle de selecao de multiplos casos
-        if (arrayOpcoes.get(arrayIndiceFinal) == 1) {
-            chamaOpcao1();
-            //mMsg.caixaAbertoAtendimentoFechado();
-        }
-        if (arrayOpcoes.get(arrayIndiceFinal) == 2) {
-            chamaOpcao2();//mMsg.caixaFechadoAtendimentoFechado();
-        } else if (arrayOpcoes.get(arrayIndiceFinal) == 3) {
-            chamaOpcao3();//mMsg.caixaEAtendimentoAbertos();
-        } else if (arrayOpcoes.get(arrayIndiceFinal) == 4) {
-            chamaOpcao4();//mMsg.caixaAbertoAtendimentoFechado();
-        } else if (arrayOpcoes.get(arrayIndiceFinal) == 5) {
-            mMsg.caixaFechadoAtendimentoFechado();
-            mMsg.senhaEspereCaixaAbrir();
-        } else if (arrayOpcoes.get(arrayIndiceFinal) == 6) {
-            System.out.println("Opção 6x");
-            System.out.println("6");
-            System.out.println("6");
-            System.out.println("6");
-            //chamaOpcao5();
-        } else if (arrayOpcoes.get(arrayIndiceFinal) == 7) {
-            System.out.println("Opção 7x");
-            System.out.println("7");
-            System.out.println("7");
-            System.out.println("7");
-            //chamaOpcao6();
-        }
-            
-        }catch (ArrayIndexOutOfBoundsException e ){
+            //controle de selecao de multiplos casos
+            //retorna o display da ultima opçao selecionanda
+            if (arrayOpcoes.get(arrayIndiceFinal) == 1) {
+                mMsg.caixaAberto();
+                mMsg.atendimentoFechado();
+                mMsg.senha();
+            } else if (arrayOpcoes.get(arrayIndiceFinal) == 2) {
+                mMsg.caixaFechado();
+                mMsg.atendimentoFechado();
+                mMsg.senha();
+            } else if (arrayOpcoes.get(arrayIndiceFinal) == 3) {
+                mMsg.caixaAberto();
+                mMsg.atendimentoAberto();
+                mMsg.senha();
+            } else if (arrayOpcoes.get(arrayIndiceFinal) == 4) {
+                mMsg.caixaAberto();
+                mMsg.atendimentoFechado();
+                mMsg.senha();
+            } else if (arrayOpcoes.get(arrayIndiceFinal) == 5) {
+                mMsg.caixaAberto();
+                mMsg.atendimentoAberto();
+                mMsg.senha();
+            } else if (arrayOpcoes.get(arrayIndiceFinal) == 6) {
+                mMsg.caixaAberto();
+                mMsg.atendimentoAberto();
+                mMsg.senha();
+            } else if (arrayOpcoes.get(arrayIndiceFinal) == 7) {
+                mMsg.caixaAberto();
+                mMsg.atendimentoAberto();
+                mMsg.senha();
+            } else {
+                chamarMenu() ;
+            }
+
+        } catch (ArrayIndexOutOfBoundsException e) {
             e.printStackTrace();
         }
 
-        
     }
 
     public void fimdeLinhas() {
@@ -338,7 +342,6 @@ public class Sistema {
 //    public void abrirCaixa() {
 //
 //    }
-
     public void distribuirFichas() {
 
         Scanner entrada = new Scanner(System.in);
