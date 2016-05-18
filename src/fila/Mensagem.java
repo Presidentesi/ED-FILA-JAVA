@@ -103,6 +103,10 @@ public class Mensagem {
         System.out.printf("\nCaixa fechado. ");
     }
     
+    public void caixaFechadoAbra(){
+        System.out.printf("\nCaixa fechado. Abra o caixa primeiro. ");
+    }
+    
     public void caixaFechadoOutraOpcao(){
         System.out.printf("\nCaixa fechado. Tente outra opção!!!");
     }
@@ -113,6 +117,10 @@ public class Mensagem {
     
     public void atendimentoAbertoFeche(){
         System.out.printf("\nAtendimento aberto!!! Feche o atendimento primeiro. ");
+    }
+    
+    public void atendimentoOutraOpcao(){
+        System.out.printf("\nAtendimento aberto. Tente outra opção!!!");
     }
     
     public void atendimentoAberto(){

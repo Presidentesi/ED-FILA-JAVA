@@ -172,15 +172,24 @@ public class Sistema {
     public void chamaOpcao3() {
         if ((opcaoCaixa == true) && (opcaoAtendimento == false)) {
             opcaoAtendimento = true;
-            mMsg.caixaEAtendimentoAbertos();
+            mMsg.caixaAberto();
+            mMsg.atendimentoAberto();
+            mMsg.senha();
+            //mMsg.caixaEAtendimentoAbertos();
         } else if ((opcaoCaixa == false) && (opcaoAtendimento == false)) {
-            System.out.println("Caixa fechado. Abra o caixa primeiro.");
-            System.out.println("Atendimento fechado.");
-            System.out.println("Senha");
+            mMsg.caixaFechadoAbra();
+            mMsg.atendimentoFechado();
+            mMsg.senha();
+            //System.out.println("Caixa fechado. Abra o caixa primeiro.");
+            //System.out.println("Atendimento fechado.");
+            //System.out.println("Senha");
         } else {
-            System.out.println("Caixa aberto.");
-            System.out.println("Atendimento aberto. Tente outra opção!!!");
-            System.out.println("Senha");
+            mMsg.caixaAberto();
+            mMsg.atendimentoOutraOpcao();
+            mMsg.senha();
+            //System.out.println("Caixa aberto.");
+            //System.out.println("Atendimento aberto. Tente outra opção!!!");
+            //System.out.println("Senha");
         }
     }
 
