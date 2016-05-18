@@ -64,42 +64,42 @@ public class Sistema {
             case 2:
                 fimdeLinhas();
                 arrayOpcoes.add(opcaoMenu);
-                System.out.println("Opção 2");
+                mMsg.etiquetaOpcao2();
                 chamaOpcao2();
                 break;
 
             case 3:
                 fimdeLinhas();
                 arrayOpcoes.add(opcaoMenu);
-                System.out.println("Opção 3");
+                mMsg.etiquetaOpcao3();
                 chamaOpcao3();
                 break;
 
             case 4:
                 fimdeLinhas();
                 arrayOpcoes.add(opcaoMenu);
-                System.out.println("Opção 4");
+                mMsg.etiquetaOpcao4();
                 chamaOpcao4();
                 break;
 
             case 5:
                 fimdeLinhas();
                 arrayOpcoes.add(opcaoMenu);
-                System.out.println("Opção 5");
+                mMsg.etiquetaOpcao5();
                 chamaOpcao5();
                 break;
 
             case 6:
                 fimdeLinhas();
                 arrayOpcoes.add(opcaoMenu);
-                System.out.println("Opção 6");
+                mMsg.etiquetaOpcao6();
                 chamaOpcao6();
                 break;
 
             case 7:
                 fimdeLinhas();
                 arrayOpcoes.add(opcaoMenu);
-                System.out.println("Opção 7");
+                mMsg.etiquetaOpcao7();
                 chamaOpcao7();
                 break;
 
@@ -125,15 +125,20 @@ public class Sistema {
             mMsg.senha();
             //mMsg.caixaAbertoAtendimentoFechado();
             //mCaixa.abrirCaixa(opcaoMenu);
-            
         } else if ((opcaoCaixa == true) && (opcaoAtendimento == true)) {
-            System.out.println("Caixa aberto. Tente outra opção!!!");
-            System.out.println("Atendimento aberto.");
-            System.out.println("Senha");
+            //mMsg.caixaAberto();
+            mMsg.caixaAbertoOutraOpcao();
+            //System.out.println("Caixa aberto. Tente outra opção!!!");
+            mMsg.atendimentoAberto();
+            mMsg.senha();
         } else {
-            System.out.println("Caixa aberto. Tente outra opção!!!");
-            System.out.println("Atendimento fechado.");
-            System.out.println("Senha");
+            //mMsg.caixaAberto();
+            mMsg.caixaAbertoOutraOpcao();
+            //System.out.println("Caixa aberto. Tente outra opção!!!");
+            mMsg.atendimentoFechado();
+            //System.out.println("Atendimento fechado.");
+            mMsg.senha();
+            //System.out.println("Senha");
         }
     }
 
@@ -141,15 +146,25 @@ public class Sistema {
     public void chamaOpcao2() {
         if ((opcaoCaixa == true) && (opcaoAtendimento == false)) {
             opcaoCaixa = false;
-            mMsg.caixaFechadoAtendimentoFechado();
+            mMsg.caixaFechado();
+            mMsg.atendimentoFechado();
+            mMsg.senha();
+            //mMsg.caixaFechadoAtendimentoFechado();
         } else if ((opcaoCaixa == true) && (opcaoAtendimento == true)) {
-            System.out.println("Caixa aberto.");
-            System.out.println("Atendimento aberto!!! Feche o atendimento primeiro.");
-            System.out.println("Senha");
+            mMsg.caixaAberto();
+            //mMsg.atendimentoAberto();
+            mMsg.atendimentoAbertoFeche();
+            mMsg.senha();
+            //System.out.println("Caixa aberto.");
+            //System.out.println("Atendimento aberto!!! Feche o atendimento primeiro.");
+            //System.out.println("Senha");
         } else {
-            System.out.println("Caixa fechado. Tente outra opção!!!");
-            System.out.println("Atendimento fechado");
-            System.out.println("Senha");
+            mMsg.caixaFechadoOutraOpcao();
+            mMsg.atendimentoFechado();
+            mMsg.senha();
+            //System.out.println("Caixa fechado. Tente outra opção!!!");
+            //System.out.println("Atendimento fechado");
+            //System.out.println("Senha");
         }
     }
 

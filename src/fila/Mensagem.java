@@ -85,9 +85,7 @@ public class Mensagem {
         System.out.println("Encerre as operações do dia.");
     }
 
-    public void caixaAbertoOutraOpcao() {
-        System.out.println(" Tente outra opção!!!");
-    }
+
 
     
     public void opcao(){
@@ -97,15 +95,31 @@ public class Mensagem {
         System.out.printf("\nCaixa aberto. ");
     }
     
+    public void caixaAbertoOutraOpcao() {
+        System.out.printf("\nCaixa aberto. Tente outra opção!!!");
+    }
+    
     public void caixaFechado(){
         System.out.printf("\nCaixa fechado. ");
+    }
+    
+    public void caixaFechadoOutraOpcao(){
+        System.out.printf("\nCaixa fechado. Tente outra opção!!!");
     }
     
     public void atendimentoFechado(){
         System.out.printf("\nAtendimento fechado. ");
     }
     
+    public void atendimentoAbertoFeche(){
+        System.out.printf("\nAtendimento aberto!!! Feche o atendimento primeiro. ");
+    }
+    
+    public void atendimentoAberto(){
+        System.out.printf("\nAtendimento aberto. ");
+    }
+    
     public void senha(){
-        System.out.printf("\nSenha.");
+        System.out.printf("\nSenha ");
     }
 }
