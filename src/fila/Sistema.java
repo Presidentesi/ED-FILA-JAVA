@@ -17,8 +17,9 @@ public class Sistema {
 
     Mensagem mMsg = new Mensagem();
     ArrayList<Integer> arrayOpcoes = new ArrayList<Integer>();
-
-    public void chamarCabecalho() {
+    Caixa mCaixa = new Caixa();
+    
+    public void chamarCabecalhoMenu() {
         fimdeLinhas();
         System.out.println("Opção");
         mMsg.caixaFechadoAtendimentoFechado();
@@ -119,8 +120,12 @@ public class Sistema {
     public void chamaOpcao1() {
         if ((!opcaoCaixa) && (opcaoAtendimento == false)) {
             opcaoCaixa = true;
-            mMsg.caixaAbertoAtendimentoFechado();
-            //chamarMenu();
+            mMsg.caixaAberto();
+            mMsg.atendimentoFechado();
+            mMsg.senha();
+            //mMsg.caixaAbertoAtendimentoFechado();
+            //mCaixa.abrirCaixa(opcaoMenu);
+            
         } else if ((opcaoCaixa == true) && (opcaoAtendimento == true)) {
             System.out.println("Caixa aberto. Tente outra opção!!!");
             System.out.println("Atendimento aberto.");
@@ -137,7 +142,6 @@ public class Sistema {
         if ((opcaoCaixa == true) && (opcaoAtendimento == false)) {
             opcaoCaixa = false;
             mMsg.caixaFechadoAtendimentoFechado();
-            //System.out.println("Senha");
         } else if ((opcaoCaixa == true) && (opcaoAtendimento == true)) {
             System.out.println("Caixa aberto.");
             System.out.println("Atendimento aberto!!! Feche o atendimento primeiro.");
@@ -154,7 +158,6 @@ public class Sistema {
         if ((opcaoCaixa == true) && (opcaoAtendimento == false)) {
             opcaoAtendimento = true;
             mMsg.caixaEAtendimentoAbertos();
-            //System.out.println("Senha");
         } else if ((opcaoCaixa == false) && (opcaoAtendimento == false)) {
             System.out.println("Caixa fechado. Abra o caixa primeiro.");
             System.out.println("Atendimento fechado.");
@@ -196,7 +199,8 @@ public class Sistema {
             mMsg.senhaEspereAtendimentoAbrir();
         }
     }
-
+    
+    //metodo para emitir senha prioritária
     public void chamaOpcao6() {
         if ((opcaoCaixa == false) && (opcaoAtendimento == false)) {
             mMsg.caixaFechadoAtendimentoFechado();
@@ -210,10 +214,12 @@ public class Sistema {
         }
     }
 
+    //metodo para chamar o senha ao caixa
     public void chamaOpcao7() {
         System.out.println("Próximo cliente.");
     }
 
+    //metodo para sair do sistema
     public void chamaOpcao8() {
         if ((opcaoCaixa == false) && (opcaoAtendimento == false)) {
             mMsg.operacoesEncerradas();
@@ -305,9 +311,9 @@ public class Sistema {
         }
     }
 
-    public void abrirCaixa() {
-
-    }
+//    public void abrirCaixa() {
+//
+//    }
 
     public void distribuirFichas() {
 

@@ -2,6 +2,7 @@ package fila;
 
 public class Caixa {
 
+    
     private int numeroDoCaixa;
     private int numeroDaSenha;
     
