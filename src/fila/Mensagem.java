@@ -16,29 +16,57 @@ public class Mensagem {
         System.out.println("============================");
     }
     
-    public void immprimeOpcao1(){
-        System.out.println("Opção 1x");
-        System.out.printf("Caixa aberto.");
-        System.out.println("\nAtendimento fechado.");
-        System.out.println("Senha");
+    public void etiquetaOpcao1(){
+        System.out.println("Opção 1");
+    }
+    
+    public void etiquetaOpcao2(){
+        System.out.println("Opção 2");
+    }
+    
+    public void etiquetaOpcao3(){
+        System.out.println("Opção 3");
+    }
+    
+    public void etiquetaOpcao4(){
+        System.out.println("Opção 4");
+    }
+    
+    public void etiquetaOpcao5(){
+        System.out.println("Opção 5");
+    }
+    
+    public void etiquetaOpcao6(){
+        System.out.println("Opção 6");
+    }
+    
+    public void etiquetaOpcao7(){
+        System.out.println("Opção 7");
     }
 
     //mensagem menu da opcao 1 e 4
     public void caixaAbertoAtendimentoFechado() {
         System.out.printf("Caixa aberto.");
         System.out.println("\nAtendimento fechado.");
+        System.out.println("Senha");
     }
 
     //mensagem menu da opcao 2
     public void caixaFechadoAtendimentoFechado() {
         System.out.println("Caixa fechado.");
         System.out.println("Atendimento fechado.");
+        System.out.println("Senha");
     }
 
     //mensagem menu da opcao 3
     public void caixaEAtendimentoAbertos() {
         System.out.printf("Caixa aberto.");
         System.out.println("\nAtendimento aberto.");
+        System.out.println("Senha");
+    }
+    
+    public void opcaoInvalida(){
+        System.out.println("Opção inválida, tente novamente!!!");
     }
 
     public void senhaEspereCaixaAbrir() {

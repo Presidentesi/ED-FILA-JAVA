@@ -17,25 +17,24 @@ public class Sistema {
     Mensagem mMsg = new Mensagem();
     ArrayList<Integer> arrayOpcoes = new ArrayList<Integer>();
 
+    public void chamarCabecalho() {
+        fimdeLinhas();
+        System.out.println("Opção");
+        mMsg.caixaFechadoAtendimentoFechado();
+    }
+
     public void chamarMenu() {
 
         //inicializa objeto Scanner que permite a entrada de dados via teclado
         Scanner entrada = new Scanner(System.in);
-        
-        //Menu mMenu = new Menu();
-        fimdeLinhas();
-        System.out.println("Opção");
-        mMsg.caixaFechadoAtendimentoFechado();
-        System.out.println("Senha");
 
+        //Menu mMenu = new Menu();
         //testa a condição de continuação do loop
         do {
             //try{
 
             //exibe o menu de Opcoes
             mMsg.menuExibir();
-
-            
             //atribui à opcaoMenu os dados para obter os dados via teclado
             System.out.print(" Escolha opção desejada: ");
             opcaoMenu = entrada.nextInt();
@@ -54,7 +53,7 @@ public class Sistema {
         switch (opcaoMenu) {
             case 1:
                 fimdeLinhas();
-                System.out.println("Opção 1");
+                mMsg.etiquetaOpcao1();
                 arrayOpcoes.add(opcaoMenu);
                 chamaOpcao1();
                 //mMenu.add(true);
@@ -119,10 +118,8 @@ public class Sistema {
     public void chamaOpcao1() {
         if ((!opcaoCaixa) && (opcaoAtendimento == false)) {
             opcaoCaixa = true;
-            //mMsg.caixaAbertoAtendimentoFechado();
-            //System.out.println("Senha");
-            mMsg.immprimeOpcao1();
-            abrirCaixa();
+            mMsg.caixaAbertoAtendimentoFechado();
+            //chamarMenu();
         } else if ((opcaoCaixa == true) && (opcaoAtendimento == true)) {
             System.out.println("Caixa aberto. Tente outra opção!!!");
             System.out.println("Atendimento aberto.");
@@ -139,7 +136,7 @@ public class Sistema {
         if ((opcaoCaixa == true) && (opcaoAtendimento == false)) {
             opcaoCaixa = false;
             mMsg.caixaFechadoAtendimentoFechado();
-            System.out.println("Senha");
+            //System.out.println("Senha");
         } else if ((opcaoCaixa == true) && (opcaoAtendimento == true)) {
             System.out.println("Caixa aberto.");
             System.out.println("Atendimento aberto!!! Feche o atendimento primeiro.");
@@ -156,7 +153,7 @@ public class Sistema {
         if ((opcaoCaixa == true) && (opcaoAtendimento == false)) {
             opcaoAtendimento = true;
             mMsg.caixaEAtendimentoAbertos();
-            System.out.println("Senha");
+            //System.out.println("Senha");
         } else if ((opcaoCaixa == false) && (opcaoAtendimento == false)) {
             System.out.println("Caixa fechado. Abra o caixa primeiro.");
             System.out.println("Atendimento fechado.");
@@ -172,7 +169,7 @@ public class Sistema {
     public void chamaOpcao4() {
         if ((opcaoCaixa == true) && (opcaoAtendimento == true)) {
             mMsg.caixaAbertoAtendimentoFechado();
-            System.out.println("Senha");
+            //System.out.println("Senha");
             opcaoAtendimento = false;
         } else if ((opcaoCaixa == true) && (opcaoAtendimento == false)) {
             System.out.println("Caixa aberto.");
@@ -211,8 +208,6 @@ public class Sistema {
     }
 
     public void chamaOpcao8() {
-
-//        if()
         if ((opcaoCaixa == false) && (opcaoAtendimento == false)) {
             mMsg.operacoesEncerradas();
             opcaoSair = true;
@@ -226,29 +221,22 @@ public class Sistema {
     }
 
     public void chamaOpcaoInvalida() {
-        //System.out.printf(opcaoCaixa, opcaoAtendimento);
-//            for( int i = 0; i<arrayOpcoes.size(); i++ ){
-//                System.out.printf("Arrays: %s\n", arrayOpcoes.get(i));
-//            }
-//            System.out.printf("Quantidade teclada: %d\n", arrayOpcoes.size());
+//      inicializa variavel e armazena a ultima posicao do ArrayList de opcoes selecionadas
+        arrayIndiceFinal = (arrayOpcoes.size() - 1);
 
+        for( int i = 0 ; i < arrayOpcoes.size(); i++){
+            System.out.printf("%d ", arrayOpcoes.get(i));
+        }
+        System.out.printf("\nUltima teclada: %d\n", arrayOpcoes.get(arrayIndiceFinal));
         
-        
-        //inicializa variavel e armazena a ultima posicao do ArrayList de opcoes selecionadas
-        arrayIndiceFinal = (arrayOpcoes.size()-1);
-        
-//        System.out.printf("\nUltima teclada: %d\n", arrayOpcoes.get(arrayIndiceFinal));
-        
-        System.out.println("Opção inválida, tente novamente!!!");
-        //System.out.println("Caixa");
-        //System.out.println("Atendimento");
-        //System.out.println("Senha");
-        
+        //System.out.println("Metodo Opcao Invalida");
+        mMsg.opcaoInvalida();
+        //mMsg.etiquetaOpcao1();
         controleSelecao();
-        
+
         //chama metodo para exibir o menu de opcoes
         mMsg.menuExibir();
-
+       
         //controle de excecao caso ocorra um erro durante a execucao da Thread
         try {
             Thread.sleep(3000);
@@ -257,61 +245,65 @@ public class Sistema {
         }
 
         fimdeLinhas();
-        
         controleSelecao();
+        chamarMenu();
+        //mMsg.etiquetaOpcao1();
+        //fimdeLinhas();
+
+        //controleSelecao();
+        //arrayOpcoes.clear();
     }
-    
-    public void controleSelecao(){
+
+    public void controleSelecao() {
         //controle de selecao de multiplos casos
-        if (arrayIndiceFinal == 0) {
+        if (arrayOpcoes.get(arrayIndiceFinal) == 1) {
+            //mMsg.etiquetaOpcao1();
+            mMsg.caixaAbertoAtendimentoFechado();
             //System.out.println("Opção 1x");
-            //mMsg.caixaAbertoAtendimentoFechado();
-            //System.out.println("Senha");
-            mMsg.immprimeOpcao1();
+            //System.out.println("1");
+            //System.out.println("1");
+            //System.out.println("1");
+        }
+        if (arrayOpcoes.get(arrayIndiceFinal) == 2) {
+            //mMsg.etiquetaOpcao2();
+            //mMsg.caixaFechadoAtendimentoFechado();
+            System.out.println("Opção 2x");
+            System.out.println("2");
+            System.out.println("2");
+            System.out.println("2");
             //chamaOpcao1();
-        } if (arrayIndiceFinal == 1) {
-            System.out.println("1");
-            System.out.println("1");
-            System.out.println("1");
-            //chamaOpcao1();
-        } else if (arrayIndiceFinal == 2) {
-            System.out.println("Opção");
-            System.out.println("2");
-            System.out.println("2");
-            System.out.println("2");
+        } else if (arrayOpcoes.get(arrayIndiceFinal) == 3) {
+            System.out.println("Opção 3x");
+            System.out.println("3");
+            System.out.println("3");
+            System.out.println("3");
             //chamaOpcao2();
-        } else if (arrayIndiceFinal == 3) {
-            System.out.println("Opção");
-            System.out.println("3");
-            System.out.println("3");
-            System.out.println("3");
+        } else if (arrayOpcoes.get(arrayIndiceFinal) == 4) {
+            System.out.println("Opção 4x");
+            System.out.println("4");
+            System.out.println("4");
+            System.out.println("4");
             //chamaOpcao3();
-        } else if (arrayIndiceFinal == 4) {
-            System.out.println("Opção");
-            System.out.println("4");
-            System.out.println("4");
-            System.out.println("4");
+        } else if (arrayOpcoes.get(arrayIndiceFinal) == 5) {
+            System.out.println("Opção 5x");
+            System.out.println("5");
+            System.out.println("5");
+            System.out.println("5");
             //chamaOpcao4();
-        } else if (arrayIndiceFinal == 5) {
-            System.out.println("Opção");
-            System.out.println("5");
-            System.out.println("5");
-            System.out.println("5");
+        } else if (arrayOpcoes.get(arrayIndiceFinal) == 6) {
+            System.out.println("Opção 6x");
+            System.out.println("6");
+            System.out.println("6");
+            System.out.println("6");
             //chamaOpcao5();
-        } else if (arrayIndiceFinal == 6) {
-            System.out.println("Opção");
-            System.out.println("6");
-            System.out.println("6");
-            System.out.println("6");
+        } else if (arrayOpcoes.get(arrayIndiceFinal) == 7) {
+            System.out.println("Opção 7x");
+            System.out.println("7");
+            System.out.println("7");
+            System.out.println("7");
             //chamaOpcao6();
-        } else if (arrayIndiceFinal == 7) {
-            System.out.println("Opção");
-            System.out.println("7");
-            System.out.println("7");
-            System.out.println("7");
-            //chamaOpcao7();
         } else {
-            return ;
+            return;
         }
     }
 
