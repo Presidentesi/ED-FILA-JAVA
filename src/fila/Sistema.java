@@ -248,13 +248,19 @@ public class Sistema {
     //metodo para emitir senha prioritária
     public void chamaOpcao6() {
         if ((opcaoCaixa == false) && (opcaoAtendimento == false)) {
-            mMsg.caixaFechadoAtendimentoFechado();
+            mMsg.caixaFechado();
+            mMsg.atendimentoFechado();
+            //mMsg.caixaFechadoAtendimentoFechado();
             mMsg.senhaEspereCaixaAbrir();
         } else if ((opcaoCaixa == true) && (opcaoAtendimento == true)) {
-            mMsg.caixaEAtendimentoAbertos();
-            System.out.printf(" 1 - Emitida senha prioritária.");
+            mMsg.caixaAberto();
+            mMsg.atendimentoAberto();
+            mMsg.senha();
+            //mMsg.caixaEAtendimentoAbertos();
+            System.out.printf("1 - Emitida senha prioritária.");
         } else {
-            mMsg.caixaAbertoAtendimentoFechado();
+            mMsg.caixaAberto();
+            mMsg.atendimentoFechado();
             mMsg.senhaEspereAtendimentoAbrir();
         }
     }
