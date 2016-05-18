@@ -15,32 +15,32 @@ public class Mensagem {
         System.out.println(" 8 - SAIR");
         System.out.println("============================");
     }
-    
-    public void etiquetaOpcao1(){
+
+    public void etiquetaOpcao1() {
         System.out.printf("\nOpção 1 ");
     }
-    
-    public void etiquetaOpcao2(){
+
+    public void etiquetaOpcao2() {
         System.out.printf("\nOpção 2");
     }
-    
-    public void etiquetaOpcao3(){
+
+    public void etiquetaOpcao3() {
         System.out.printf("\nOpção 3");
     }
-    
-    public void etiquetaOpcao4(){
+
+    public void etiquetaOpcao4() {
         System.out.printf("\nOpção 4");
     }
-    
-    public void etiquetaOpcao5(){
+
+    public void etiquetaOpcao5() {
         System.out.printf("\nOpção 5");
     }
-    
-    public void etiquetaOpcao6(){
+
+    public void etiquetaOpcao6() {
         System.out.printf("\nOpção 6");
     }
-    
-    public void etiquetaOpcao7(){
+
+    public void etiquetaOpcao7() {
         System.out.printf("\nOpção 7");
     }
 
@@ -64,17 +64,9 @@ public class Mensagem {
         System.out.println("\nAtendimento aberto.");
         System.out.printf("Senha");
     }
-    
-    public void opcaoInvalida(){
+
+    public void opcaoInvalida() {
         System.out.println("Opção inválida, tente novamente!!!");
-    }
-
-    public void senhaEspereCaixaAbrir() {
-        System.out.printf(" não pode ser emitida! Espere o caixa abrir primeiro.");
-    }
-
-    public void senhaEspereAtendimentoAbrir() {
-        System.out.printf(" não pode ser emitida! Espere o atendimento abrir primeiro.");
     }
 
     public void operacoesEncerradas() {
@@ -85,60 +77,64 @@ public class Mensagem {
         System.out.println("Encerre as operações do dia.");
     }
 
-
-
-    
-    public void opcao(){
+    public void opcao() {
         System.out.printf("\nOpção. ");
     }
-    
+
     //metodos relacionado opcao1
-    public void caixaAberto(){
+    public void caixaAberto() {
         System.out.printf("\nCaixa aberto. ");
     }
-    
+
     public void caixaAbertoOutraOpcao() {
         System.out.printf("\nCaixa aberto. Tente outra opção!!!");
     }
-    
+
     //metodos relacionado opcao2
-    public void caixaFechado(){
+    public void caixaFechado() {
         System.out.printf("\nCaixa fechado. ");
     }
-        
-    public void caixaFechadoOutraOpcao(){
+
+    public void caixaFechadoOutraOpcao() {
         System.out.printf("\nCaixa fechado. Tente outra opção!!!");
     }
-    
-    public void caixaFechadoAbra(){
+
+    public void caixaFechadoAbra() {
         System.out.printf("\nCaixa fechado. Abra o caixa primeiro. ");
     }
-    
+
     //metodos relacionado opcao3
-    public void atendimentoAberto(){
+    public void atendimentoAberto() {
         System.out.printf("\nAtendimento aberto. ");
     }
-        
-    public void atendimentoAbertoOutraOpcao(){
+
+    public void atendimentoAbertoOutraOpcao() {
         System.out.printf("\nAtendimento aberto. Tente outra opção!!!");
     }
-    
-    public void atendimentoAbertoFeche(){
+
+    public void atendimentoAbertoFeche() {
         System.out.printf("\nAtendimento aberto!!! Feche o atendimento primeiro. ");
     }
-    
+
     //metodos relacionado opcao4
-    public void atendimentoFechado(){
+    public void atendimentoFechado() {
         System.out.printf("\nAtendimento fechado. ");
     }
-    
-    public void atendimentoFechadoOutraOpcao(){
+
+    public void atendimentoFechadoOutraOpcao() {
         System.out.printf("\nAtendimento fechado. Tente outra opção!!!");
     }
 
-
-    
-    public void senha(){
+    //metodos relacionados opcao5
+    public void senha() {
         System.out.printf("\nSenha ");
+    }
+
+    public void senhaEspereCaixaAbrir() {
+        System.out.printf("\nSenha não pode ser emitida! Espere o caixa abrir primeiro.");
+    }
+
+    public void senhaEspereAtendimentoAbrir() {
+        System.out.printf("\nSenha não pode ser emitida! Espere o atendimento abrir primeiro.");
     }
 }

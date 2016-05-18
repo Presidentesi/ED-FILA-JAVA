@@ -215,7 +215,6 @@ public class Sistema {
             //System.out.println("Atendimento fechado. Tente outra opção!!!");
             //System.out.println("Senha");
         } else {
-            System.out.println("xxxx");
             mMsg.caixaFechado();
             mMsg.atendimentoAbertoOutraOpcao();
             mMsg.senha();
@@ -228,13 +227,20 @@ public class Sistema {
     //metodo para emitir senha comercial
     public void chamaOpcao5() {
         if ((opcaoCaixa == false) && (opcaoAtendimento == false)) {
-            mMsg.caixaFechadoAtendimentoFechado();
+            mMsg.caixaFechado();
+            mMsg.atendimentoFechado();
+            //mMsg.caixaFechadoAtendimentoFechado();
             mMsg.senhaEspereCaixaAbrir();
         } else if ((opcaoCaixa == true) && (opcaoAtendimento == true)) {
-            mMsg.caixaEAtendimentoAbertos();
-            System.out.printf(" 1 - Emitida senha comercial.");
+            mMsg.caixaAberto();
+            mMsg.atendimentoAberto();
+            //mMsg.caixaEAtendimentoAbertos();
+            mMsg.senha();
+            System.out.printf("1 - Emitida senha comercial.");
         } else {
-            mMsg.caixaAbertoAtendimentoFechado();
+            mMsg.caixaAberto();
+            mMsg.atendimentoFechado();
+            //mMsg.caixaAbertoAtendimentoFechado();
             mMsg.senhaEspereAtendimentoAbrir();
         }
     }
