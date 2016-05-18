@@ -106,7 +106,7 @@ public class Sistema {
             case 8:
                 fimdeLinhas();
                 arrayOpcoes.add(opcaoMenu);
-                System.out.println("Opção 8");
+                mMsg.etiquetaOpcao8();
                 chamaOpcao8();
                 break;
 
@@ -123,22 +123,14 @@ public class Sistema {
             mMsg.caixaAberto();
             mMsg.atendimentoFechado();
             mMsg.senha();
-            //mMsg.caixaAbertoAtendimentoFechado();
-            //mCaixa.abrirCaixa(opcaoMenu);
         } else if ((opcaoCaixa == true) && (opcaoAtendimento == true)) {
-            //mMsg.caixaAberto();
             mMsg.caixaAbertoOutraOpcao();
-            //System.out.println("Caixa aberto. Tente outra opção!!!");
             mMsg.atendimentoAberto();
             mMsg.senha();
         } else {
-            //mMsg.caixaAberto();
             mMsg.caixaAbertoOutraOpcao();
-            //System.out.println("Caixa aberto. Tente outra opção!!!");
             mMsg.atendimentoFechado();
-            //System.out.println("Atendimento fechado.");
             mMsg.senha();
-            //System.out.println("Senha");
         }
     }
 
@@ -149,22 +141,14 @@ public class Sistema {
             mMsg.caixaFechado();
             mMsg.atendimentoFechado();
             mMsg.senha();
-            //mMsg.caixaFechadoAtendimentoFechado();
         } else if ((opcaoCaixa == true) && (opcaoAtendimento == true)) {
             mMsg.caixaAberto();
-            //mMsg.atendimentoAberto();
             mMsg.atendimentoAbertoFeche();
             mMsg.senha();
-            //System.out.println("Caixa aberto.");
-            //System.out.println("Atendimento aberto!!! Feche o atendimento primeiro.");
-            //System.out.println("Senha");
         } else {
             mMsg.caixaFechadoOutraOpcao();
             mMsg.atendimentoFechado();
             mMsg.senha();
-            //System.out.println("Caixa fechado. Tente outra opção!!!");
-            //System.out.println("Atendimento fechado");
-            //System.out.println("Senha");
         }
     }
 
@@ -175,21 +159,14 @@ public class Sistema {
             mMsg.caixaAberto();
             mMsg.atendimentoAberto();
             mMsg.senha();
-            //mMsg.caixaEAtendimentoAbertos();
         } else if ((opcaoCaixa == false) && (opcaoAtendimento == false)) {
             mMsg.caixaFechadoAbra();
             mMsg.atendimentoFechado();
             mMsg.senha();
-            //System.out.println("Caixa fechado. Abra o caixa primeiro.");
-            //System.out.println("Atendimento fechado.");
-            //System.out.println("Senha");
         } else {
             mMsg.caixaAberto();
             mMsg.atendimentoAbertoOutraOpcao();
             mMsg.senha();
-            //System.out.println("Caixa aberto.");
-            //System.out.println("Atendimento aberto. Tente outra opção!!!");
-            //System.out.println("Senha");
         }
     }
 
@@ -204,23 +181,15 @@ public class Sistema {
             mMsg.caixaAberto();
             mMsg.atendimentoFechado();
             mMsg.senha();
-            //mMsg.caixaAbertoAtendimentoFechado();
-            //System.out.println("Senha");
             opcaoAtendimento = false;
         } else if ((opcaoCaixa == true) && (opcaoAtendimento == false)) {
             mMsg.caixaAberto();
             mMsg.atendimentoFechadoOutraOpcao();
             mMsg.senha();
-            //System.out.println("Caixa aberto.");
-            //System.out.println("Atendimento fechado. Tente outra opção!!!");
-            //System.out.println("Senha");
         } else {
             mMsg.caixaFechado();
             mMsg.atendimentoAbertoOutraOpcao();
             mMsg.senha();
-            //System.out.println("Caixa fechado.");
-            //System.out.println("Atendimento fechado. Tente outra opção!!!");
-            //System.out.println("Senha");
         }
     }
 
@@ -229,18 +198,15 @@ public class Sistema {
         if ((opcaoCaixa == false) && (opcaoAtendimento == false)) {
             mMsg.caixaFechado();
             mMsg.atendimentoFechado();
-            //mMsg.caixaFechadoAtendimentoFechado();
             mMsg.senhaEspereCaixaAbrir();
         } else if ((opcaoCaixa == true) && (opcaoAtendimento == true)) {
             mMsg.caixaAberto();
             mMsg.atendimentoAberto();
-            //mMsg.caixaEAtendimentoAbertos();
             mMsg.senha();
             System.out.printf("1 - Emitida senha comercial.");
         } else {
             mMsg.caixaAberto();
             mMsg.atendimentoFechado();
-            //mMsg.caixaAbertoAtendimentoFechado();
             mMsg.senhaEspereAtendimentoAbrir();
         }
     }
@@ -250,13 +216,11 @@ public class Sistema {
         if ((opcaoCaixa == false) && (opcaoAtendimento == false)) {
             mMsg.caixaFechado();
             mMsg.atendimentoFechado();
-            //mMsg.caixaFechadoAtendimentoFechado();
             mMsg.senhaEspereCaixaAbrir();
         } else if ((opcaoCaixa == true) && (opcaoAtendimento == true)) {
             mMsg.caixaAberto();
             mMsg.atendimentoAberto();
             mMsg.senha();
-            //mMsg.caixaEAtendimentoAbertos();
             System.out.printf("1 - Emitida senha prioritária.");
         } else {
             mMsg.caixaAberto();
@@ -265,22 +229,31 @@ public class Sistema {
         }
     }
 
-    //metodo para chamar o senha ao caixa
+    //metodo para chamar cliente
     public void chamaOpcao7() {
-        System.out.println("Próximo cliente.");
+        if((opcaoAtendimento == true)){
+            mMsg.caixaAberto();
+            mMsg.proximoCliente();
+            mMsg.senha();
+            System.out.printf(" subtrai -1 da fila. Nova fila.");
+        }
     }
 
     //metodo para sair do sistema
     public void chamaOpcao8() {
         if ((opcaoCaixa == false) && (opcaoAtendimento == false)) {
+            mMsg.caixaFechado();
+            mMsg.atendimentoFechado();
             mMsg.operacoesEncerradas();
             opcaoSair = true;
         } else if ((opcaoCaixa == true) && (opcaoAtendimento == true)) {
-            mMsg.caixaEAtendimentoAbertos();
-            mMsg.encerreAsOperacoes();
+            mMsg.caixaAberto();
+            mMsg.atendimentoAbertoEncerre();
+            mMsg.senha();
         } else {
-            mMsg.caixaAbertoAtendimentoFechado();
-            mMsg.encerreAsOperacoes();
+            mMsg.caixaAbertoEncerre();
+            mMsg.atendimentoFechado();
+            mMsg.senha();
         }
     }
 

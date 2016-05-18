@@ -44,6 +44,10 @@ public class Mensagem {
         System.out.printf("\nOpção 7");
     }
 
+    public void etiquetaOpcao8() {
+        System.out.printf("\nOpção 8");
+    }
+
     //mensagem menu da opcao 1 e 4
     public void caixaAbertoAtendimentoFechado() {
         System.out.printf("Caixa aberto.");
@@ -67,14 +71,6 @@ public class Mensagem {
 
     public void opcaoInvalida() {
         System.out.println("Opção inválida, tente novamente!!!");
-    }
-
-    public void operacoesEncerradas() {
-        System.out.println("Operações encerradas.");
-    }
-
-    public void encerreAsOperacoes() {
-        System.out.println("Encerre as operações do dia.");
     }
 
     public void opcao() {
@@ -125,7 +121,7 @@ public class Mensagem {
         System.out.printf("\nAtendimento fechado. Tente outra opção!!!");
     }
 
-    //metodos relacionados opcao5
+    //metodos relacionados opcao5 e opcao6
     public void senha() {
         System.out.printf("\nSenha ");
     }
@@ -136,5 +132,23 @@ public class Mensagem {
 
     public void senhaEspereAtendimentoAbrir() {
         System.out.printf("\nSenha não pode ser emitida! Espere o atendimento abrir primeiro.");
+    }
+
+    //metodos relacionados opcao7
+    public void proximoCliente() {
+        System.out.printf("\nAtendimento aberto. Próximo cliente!!!.");
+    }
+
+    //metodos relacionados opcao8
+    public void operacoesEncerradas() {
+        System.out.printf("\nOperações encerradas.\n");
+    }
+
+    public void caixaAbertoEncerre() {
+        System.out.printf("\nCaixa aberto. Encerre as operações.");
+    }
+    
+    public void atendimentoAbertoEncerre() {
+        System.out.printf("\nAtendimento aberto. Encerre as operações.");
     }
 }
