@@ -91,6 +91,8 @@ public class Mensagem {
     public void opcao(){
         System.out.printf("\nOpção. ");
     }
+    
+    //metodos relacionado opcao1
     public void caixaAberto(){
         System.out.printf("\nCaixa aberto. ");
     }
@@ -99,33 +101,42 @@ public class Mensagem {
         System.out.printf("\nCaixa aberto. Tente outra opção!!!");
     }
     
+    //metodos relacionado opcao2
     public void caixaFechado(){
         System.out.printf("\nCaixa fechado. ");
+    }
+        
+    public void caixaFechadoOutraOpcao(){
+        System.out.printf("\nCaixa fechado. Tente outra opção!!!");
     }
     
     public void caixaFechadoAbra(){
         System.out.printf("\nCaixa fechado. Abra o caixa primeiro. ");
     }
     
-    public void caixaFechadoOutraOpcao(){
-        System.out.printf("\nCaixa fechado. Tente outra opção!!!");
+    //metodos relacionado opcao3
+    public void atendimentoAberto(){
+        System.out.printf("\nAtendimento aberto. ");
     }
-    
-    public void atendimentoFechado(){
-        System.out.printf("\nAtendimento fechado. ");
+        
+    public void atendimentoAbertoOutraOpcao(){
+        System.out.printf("\nAtendimento aberto. Tente outra opção!!!");
     }
     
     public void atendimentoAbertoFeche(){
         System.out.printf("\nAtendimento aberto!!! Feche o atendimento primeiro. ");
     }
     
-    public void atendimentoOutraOpcao(){
-        System.out.printf("\nAtendimento aberto. Tente outra opção!!!");
+    //metodos relacionado opcao4
+    public void atendimentoFechado(){
+        System.out.printf("\nAtendimento fechado. ");
     }
     
-    public void atendimentoAberto(){
-        System.out.printf("\nAtendimento aberto. ");
+    public void atendimentoFechadoOutraOpcao(){
+        System.out.printf("\nAtendimento fechado. Tente outra opção!!!");
     }
+
+
     
     public void senha(){
         System.out.printf("\nSenha ");

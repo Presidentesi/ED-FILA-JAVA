@@ -185,7 +185,7 @@ public class Sistema {
             //System.out.println("Senha");
         } else {
             mMsg.caixaAberto();
-            mMsg.atendimentoOutraOpcao();
+            mMsg.atendimentoAbertoOutraOpcao();
             mMsg.senha();
             //System.out.println("Caixa aberto.");
             //System.out.println("Atendimento aberto. Tente outra opção!!!");
@@ -195,18 +195,33 @@ public class Sistema {
 
     //metodo para encerrar o atendimento
     public void chamaOpcao4() {
-        if ((opcaoCaixa == true) && (opcaoAtendimento == true)) {
-            mMsg.caixaAbertoAtendimentoFechado();
+        if ((opcaoCaixa == false) && (opcaoAtendimento == false)) {
+            opcaoAtendimento = false;
+            mMsg.caixaFechado();
+            mMsg.atendimentoFechadoOutraOpcao();
+            mMsg.senha();
+        } else if ((opcaoCaixa == true) && (opcaoAtendimento == true)) {
+            mMsg.caixaAberto();
+            mMsg.atendimentoFechado();
+            mMsg.senha();
+            //mMsg.caixaAbertoAtendimentoFechado();
             //System.out.println("Senha");
             opcaoAtendimento = false;
         } else if ((opcaoCaixa == true) && (opcaoAtendimento == false)) {
-            System.out.println("Caixa aberto.");
-            System.out.println("Atendimento fechado. Tente outra opção!!!");
-            System.out.println("Senha");
+            mMsg.caixaAberto();
+            mMsg.atendimentoFechadoOutraOpcao();
+            mMsg.senha();
+            //System.out.println("Caixa aberto.");
+            //System.out.println("Atendimento fechado. Tente outra opção!!!");
+            //System.out.println("Senha");
         } else {
-            System.out.println("Caixa fechado.");
-            System.out.println("Atendimento fechado. Tente outra opção!!!");
-            System.out.println("Senha");
+            System.out.println("xxxx");
+            mMsg.caixaFechado();
+            mMsg.atendimentoAbertoOutraOpcao();
+            mMsg.senha();
+            //System.out.println("Caixa fechado.");
+            //System.out.println("Atendimento fechado. Tente outra opção!!!");
+            //System.out.println("Senha");
         }
     }
 
