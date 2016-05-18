@@ -4,7 +4,7 @@ public class Mensagem {
 
     //mensagem de exibição do menu
     public void menuExibir() {
-        System.out.println("====== MENU PRINCIPAL ======");
+        System.out.println("\n====== MENU PRINCIPAL ======");
         System.out.println(" 1 - ABRIR O CAIXA");
         System.out.println(" 2 - FECHAR O CAIXA");
         System.out.println(" 3 - ABRIR ATENDIMENTO");
@@ -48,21 +48,21 @@ public class Mensagem {
     public void caixaAbertoAtendimentoFechado() {
         System.out.printf("Caixa aberto.");
         System.out.println("\nAtendimento fechado.");
-        System.out.println("Senha");
+        System.out.printf("Senha");
     }
 
     //mensagem menu da opcao 2
     public void caixaFechadoAtendimentoFechado() {
         System.out.println("Caixa fechado.");
         System.out.println("Atendimento fechado.");
-        System.out.println("Senha");
+        System.out.printf("Senha ");
     }
 
     //mensagem menu da opcao 3
     public void caixaEAtendimentoAbertos() {
         System.out.printf("Caixa aberto.");
         System.out.println("\nAtendimento aberto.");
-        System.out.println("Senha");
+        System.out.printf("Senha");
     }
     
     public void opcaoInvalida(){
@@ -70,11 +70,11 @@ public class Mensagem {
     }
 
     public void senhaEspereCaixaAbrir() {
-        System.out.println("A senha não pode ser emitida! Espere o caixa abrir primeiro.");
+        System.out.printf("não pode ser emitida! Espere o caixa abrir primeiro.");
     }
 
     public void senhaEspereAtendimentoAbrir() {
-        System.out.println("A senha não pode ser emitida! Espere o atendimento abrir primeiro.");
+        System.out.printf(" não pode ser emitida! Espere o atendimento abrir primeiro.");
     }
 
     public void operacoesEncerradas() {
