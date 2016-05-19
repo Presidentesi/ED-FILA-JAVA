@@ -37,7 +37,6 @@ public class Sistema {
         //Menu mMenu = new Menu();
         //testa a condição de continuação do loop
         do {
-            //try{
 
             //exibe o menu de Opcoes
             mDisplay.menuExibir();
