@@ -41,14 +41,6 @@ public class Sistema {
 
             //exibe o menu de Opcoes
             mDisplay.menuExibir();
-//            System.out.println("T "+mCaixa.getSenhaComercial().size());
-            System.out.println("T "+mCaixa.getSenhaComercial().isEmpty());
-//            
-//            if (mCaixa.isStatus() == true) {
-//                System.out.println("false");
-//            } else {
-//                System.out.println("true");
-//            }
             
             //atribui à opcaoMenu os dados para obter os dados via teclado
             System.out.print(" Escolha opção desejada: ");
