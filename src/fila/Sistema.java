@@ -33,35 +33,22 @@ public class Sistema {
 
         //inicializa objeto Scanner que permite a entrada de dados via teclado
         Scanner entrada = new Scanner(System.in);
-
-        //Menu mMenu = new Menu();
+        
         //testa a condição de continuação do loop
         do {
-
             //exibe o menu de Opcoes
             mDisplay.menuExibir();
-            
+
             //atribui à opcaoMenu os dados para obter os dados via teclado
             System.out.print(" Escolha opção desejada: ");
-            
-            //try {
-            //if (!entrada.hasNextInt()){
-              //  System.out.print("Selecione somente numeros inteiros!");
-              //  continue;
-            //};
-                opcaoMenu = entrada.nextInt();
-            //} catch (InputMismatchException  e){
-              //  System.out.print("Selecione somente numeros inteiros!");
-            //} 
-            
-//metodo chama o seletor de opcoes
+            opcaoMenu = entrada.nextInt();
+
+            //metodo chama o seletor de opcoes
             seletorDeOpcoes(opcaoMenu);
-//            } catch (InputMismatchException e){
-//                e.printStackTrace();
-//            }
+            
         } while (!opcaoSair);
     }
-    
+
     //metodo para chamar o seletor de opçoes
     public void seletorDeOpcoes(int opcaoMenu) {
 
@@ -160,7 +147,7 @@ public class Sistema {
             mDisplay.senhasNaFila();
             mDisplay.senha();
             mCaixa.imprimeLista();
-        }else if ((opcaoCaixa == true) && (opcaoAtendimento == false) && (mCaixa.getSenhaComercial().isEmpty() == true)) {
+        } else if ((opcaoCaixa == true) && (opcaoAtendimento == false) && (mCaixa.getSenhaComercial().isEmpty() == true)) {
             opcaoCaixa = false;
             mDisplay.caixaFechado();
             mDisplay.atendimentoFechado();
@@ -247,7 +234,6 @@ public class Sistema {
             mDisplay.atendimentoFechado();
             mDisplay.senhaEspereCaixaAbrir();
             mDisplay.cursor();
-            mCaixa.caixaNumero(numeroDoCaixa);
             mDisplay.senha();
         } else if ((opcaoCaixa == true) && (opcaoAtendimento == true)) {
             mDisplay.caixaAberto();
@@ -272,24 +258,27 @@ public class Sistema {
         if ((opcaoCaixa == false) && (opcaoAtendimento == false)) {
             mDisplay.caixaFechado();
             mDisplay.atendimentoFechado();
-            mDisplay.senhaEspereCaixaAbrir();
+            mDisplay.opcaoIndisponivel();
             mDisplay.cursor();
-            mCaixa.caixaNumero(numeroDoCaixa);
             mDisplay.senha();
+            mCaixa.imprimeLista();
         } else if ((opcaoCaixa == true) && (opcaoAtendimento == true)) {
             mDisplay.caixaAberto();
             mDisplay.atendimentoAberto();
+            mDisplay.opcaoIndisponivel();
             mDisplay.cursor();
-            mCaixa.caixaNumero(numeroDoCaixa);
+            mDisplay.proximoCliente();
             mDisplay.senha();
-            mCaixa.gerarSenha();
+            mCaixa.imprimeLista();
         } else {
             mDisplay.caixaAberto();
             mDisplay.atendimentoFechado();
+            mDisplay.opcaoIndisponivel();
             mDisplay.senhaEspereAtendimentoAbrir();
             mDisplay.cursor();
             mCaixa.caixaNumero(numeroDoCaixa);
             mDisplay.senha();
+            mCaixa.imprimeLista();
         }
     }
 
@@ -332,104 +321,20 @@ public class Sistema {
         }
     }
 
+    //chama mensagem invalida
     public void chamaOpcaoInvalida() {
-        //inicializa variavel e armazena a ultima posicao do ArrayList de opcoes selecionadas
-        arrayIndiceFinal = (arrayOpcoes.size() - 1);
-
-        //chama mensagem
         mDisplay.opcaoInvalida();
-
-//        System.out.println("\n");
-//        for( int i=0; i < arrayOpcoes.size(); i++){
-//            System.out.printf(" %s ", arrayOpcoes.get(i));
-//        }
-//        
-//        System.out.println("\n");
-//        for( int i=0; i < arrayOpcoes.size(); i++){
-//            System.out.printf(" %s ", arrayOpcoes.indexOf(i));
-//        }
-//        if (arrayOpcoes.get(arrayOpcoes.size()) == null){
-//            System.out.println("valor nulo");  
-//        } else {
-//            System.out.println("chamar controle");
-//        }
-        //metodo se selecao
-        //controleSelecao();
-        //chama metodo para exibir o menu de opcoes
-        //mMsg.menuExibir();
-        //controle de excecao caso ocorra um erro durante a execucao da Thread
-        //try {
-        //    Thread.sleep(3000);
-        //} catch (InterruptedException ex) {
-        //    Logger.getLogger(Sistema.class.getName()).log(Level.SEVERE, null, ex);
-        // }
-        //System.out.printf("%s ", arrayOpcoes.get(arrayOpcoes.size()));
-        //fimdeLinhas();
-        //controleSelecao();
-        //chamarMenu();
-        //mMsg.etiquetaOpcao1();
-        //fimdeLinhas();
-        controleSelecao();
-        //arrayOpcoes.clear();
     }
 
-    public void controleSelecao() {
-        try {
-            //controle de selecao de multiplos casos
-            //retorna o display da ultima opçao selecionanda
-            if (arrayOpcoes.get(arrayIndiceFinal) == 1) {
-                mDisplay.caixaAberto();
-                mDisplay.atendimentoFechado();
-                mDisplay.senha();
-            } else if (arrayOpcoes.get(arrayIndiceFinal) == 2) {
-                mDisplay.caixaFechado();
-                mDisplay.atendimentoFechado();
-                mDisplay.senha();
-            } else if (arrayOpcoes.get(arrayIndiceFinal) == 3) {
-                mDisplay.caixaAberto();
-                mDisplay.atendimentoAberto();
-                mDisplay.senha();
-            } else if (arrayOpcoes.get(arrayIndiceFinal) == 4) {
-                mDisplay.caixaAberto();
-                mDisplay.atendimentoFechado();
-                mDisplay.senha();
-            } else if (arrayOpcoes.get(arrayIndiceFinal) == 5) {
-                mDisplay.caixaAberto();
-                mDisplay.atendimentoAberto();
-                mDisplay.senha();
-            } else if (arrayOpcoes.get(arrayIndiceFinal) == 6) {
-                mDisplay.caixaAberto();
-                mDisplay.atendimentoAberto();
-                mDisplay.senha();
-            } else if (arrayOpcoes.get(arrayIndiceFinal) == 7) {
-                mDisplay.caixaAberto();
-                mDisplay.atendimentoAberto();
-                mDisplay.senha();
-            } else {
-                mDisplay.caixaFechado();
-                mDisplay.atendimentoFechado();
-                mDisplay.senha();
-            }
-
-        } catch (ArrayIndexOutOfBoundsException e) {
-            e.printStackTrace();
-        } catch (InputMismatchException e){
-            System.out.println("Inserir somente numeoros.");;
-        }
-                
-
-    }
-
+    //retorna a mensagem anterior à opção invalida
     public void fimdeLinhas() {
         int qtdLinhas = 10;
         for (int i = 0; i < qtdLinhas; i++) {
             System.out.println("\n");
         }
     }
-
-//    public void abrirCaixa() {
-//
-//    }
+    
+    //metodo distribui senhas
     public void distribuirFichas() {
 
         Scanner entrada = new Scanner(System.in);
@@ -455,7 +360,5 @@ public class Sistema {
                 distribuirFichas();
             }
         } while (error);
-
     }
-
 }

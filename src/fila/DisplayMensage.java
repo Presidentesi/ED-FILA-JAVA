@@ -35,11 +35,9 @@ public class DisplayMensage {
     public void etiquetaOpcao6() {
         System.out.printf("\nOpção 6");
     }
-
     public void etiquetaOpcao7() {
         System.out.printf("\nOpção 7");
     }
-
     public void etiquetaOpcao8() {
         System.out.printf("\nOpção 8");
     }
@@ -49,6 +47,11 @@ public class DisplayMensage {
         System.out.printf("\nOpção inválida, tente novamente!!!");
     }
 
+    //exibe mensagem de indisponibilidade
+    public void opcaoIndisponivel(){
+        System.out.printf("Opção indisponivel no momento.");
+    }
+    
     //exime mensagem opção inicial padrao 
     public void opcao() {
         System.out.printf("\nOpção. ");
@@ -120,11 +123,9 @@ public class DisplayMensage {
     public void operacoesEncerradas() {
         System.out.printf("\nOperações encerradas.\n");
     }
-
     public void caixaAbertoEncerre() {
         System.out.printf("\nCaixa aberto. Encerre as operações.");
     }
-    
     public void atendimentoAbertoEncerre() {
         System.out.printf("\nAtendimento aberto. Encerre as operações.");
     }
