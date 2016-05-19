@@ -183,6 +183,7 @@ public class Sistema {
             mDisplay.cursor();
             mCaixa.abrirCaixa(numeroDoCaixa);
             mDisplay.senha();
+            mCaixa.imprimeLista();
         } else if ((opcaoCaixa == false) && (opcaoAtendimento == false)) {
             mDisplay.caixaFechadoAbra();
             mDisplay.atendimentoFechado();
@@ -192,7 +193,7 @@ public class Sistema {
             mDisplay.caixaAberto();
             mDisplay.atendimentoAbertoOutraOpcao();
             mDisplay.cursor();
-            mCaixa.senhaNumero(numeroDoCaixa);
+            mCaixa.abrirCaixa(numeroDoCaixa);
             mDisplay.senha();
         }
     }
@@ -210,9 +211,11 @@ public class Sistema {
             mDisplay.caixaAberto();
             mDisplay.atendimentoFechado();
             mDisplay.cursor();
-            mCaixa.caixaNumero(numeroDoCaixa);
+            mDisplay.proximoCliente();
+            mCaixa.imprimePosicaoDefaul();
+            //mCaixa.caixaNumero(numeroDoCaixa);
             mDisplay.senha();
-            //mCaixa.senhaNumero;
+            mCaixa.imprimeLista();
             opcaoAtendimento = false;
         } else if ((opcaoCaixa == true) && (opcaoAtendimento == false)) {
             mDisplay.caixaAberto();
@@ -242,7 +245,8 @@ public class Sistema {
             mDisplay.caixaAberto();
             mDisplay.atendimentoAberto();
             mDisplay.cursor();
-            mCaixa.caixaNumero(numeroDoCaixa);
+            mDisplay.proximoCliente();
+//            mCaixa.caixaNumero(numeroDoCaixa);cxkcjgkjxvglkxcjgvlkjcxglkjg
             mDisplay.senha();
             mCaixa.condicaoGerarSenha();
         } else {
@@ -250,9 +254,11 @@ public class Sistema {
             mDisplay.atendimentoFechado();
             mDisplay.senhaEspereAtendimentoAbrir();
             mDisplay.cursor();
-            mCaixa.caixaNumero(numeroDoCaixa);
+            mDisplay.proximoCliente();
+            //mCaixa.caixaNumero(numeroDoCaixa);
             mDisplay.senha();
-            mCaixa.gerarSenha();
+            //mCaixa.gerarSenha();
+            mCaixa.imprimeLista();
         }
     }
 
@@ -286,14 +292,14 @@ public class Sistema {
 
     //metodo para chamar cliente
     public void chamaOpcao7() {
-        if ((opcaoAtendimento == true)) {
-            
+        if ((opcaoAtendimento == true) || (opcaoAtendimento == false)) {
             mDisplay.caixaAberto();
             mDisplay.atendimentoAberto();
             mDisplay.cursor();
             mDisplay.proximoCliente();
+            mCaixa.imprimePosicaoUm();
             mDisplay.senha();
-            mCaixa.imprimeLista();
+            mCaixa.chamarSenha();
         }
     }
 

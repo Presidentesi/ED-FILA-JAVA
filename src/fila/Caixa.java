@@ -9,30 +9,63 @@ public class Caixa {
 
     ArrayList<Integer> senhaComercial = new ArrayList<Integer>();
 
+    //imforma o numero do caixa em operação
     public void abrirCaixa(int numero) {
         numeroDoCaixa = numero;
-        System.out.printf("Caixa nr. " + numeroDoCaixa + " entrou em operação.");
+        System.out.printf("Caixa nr. " + numeroDoCaixa + " em operação.");
     }
 
+    //verifica e limita a quantidade de senhas distribuidas ArrayList
     public void condicaoGerarSenha() {
-        if (senhaComercial.size() == 5) {
+        if (senhaComercial.size() == 20) {
             imprimeLista();
-            System.out.printf(" Arrray está cheio");
+            System.out.printf(" | No máximo 20 senhas.");
         } else {
             gerarSenha();
             imprimeLista();
         }
     }
 
+    //gera o numero da senha
     public void gerarSenha() {
         numeroDaSenha = numeroDaSenha + 1;
         senhaComercial.add(numeroDaSenha);
     }
-    
+
+    //verifica a destruição das senhas no ArrayList
+    public void chamarSenha() {
+        if (senhaComercial.isEmpty()) {
+            imprimeLista();
+            System.out.printf(" | Não há senhas.");
+        } else {
+            destruirSenha();
+            imprimeLista();
+        }
+    }
+
+    //destroi a senha do ArrayList
+    public void destruirSenha() {
+        senhaComercial.remove(0);
+    }
+
+    //imprime o ArrayList de senhas
     public void imprimeLista() {
-        System.out.printf("comercial nr. ");
+        System.out.printf("comercial nr: ");
         for (int i = 0; i < senhaComercial.size(); i++) {
             System.out.printf(" %s ", senhaComercial.get(i));
+        }
+    }
+    
+    //imprime a primeira senha do ArreyList
+    public void imprimePosicaoUm(){
+        if (!senhaComercial.isEmpty()){
+            System.out.printf(" [ %s ]", senhaComercial.get(0));
+        }
+    }
+    //imprime a primeira senha do ArreyList
+    public void imprimePosicaoDefaul(){
+        if (-1 == senhaComercial.size()){
+            System.out.printf(" [ %s ]", senhaComercial.get(1));
         }
     }
 
