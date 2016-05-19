@@ -77,6 +77,9 @@ public class DisplayMensage {
     public void caixaFechadoAbra() {
         System.out.printf("\nCaixa fechado. Abra o caixa primeiro. ");
     }
+    public void senhasNaFila(){
+        System.out.printf(" Não é possível fechar o caixa.");
+    }
 
     //metodos relacionado opcao3
     public void atendimentoAberto() {

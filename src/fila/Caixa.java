@@ -6,9 +6,10 @@ public class Caixa {
 
     private int numeroDoCaixa;
     private int numeroDaSenha;
+    public boolean status;
 
-    ArrayList<Integer> senhaComercial = new ArrayList<Integer>();
-
+    private ArrayList<Integer> senhaComercial = new ArrayList<Integer>();
+    
     //imforma o numero do caixa em operação
     public void abrirCaixa(int numero) {
         numeroDoCaixa = numero;
@@ -62,6 +63,7 @@ public class Caixa {
             System.out.printf(" [ %s ]", senhaComercial.get(0));
         }
     }
+   
     //imprime a primeira senha do ArreyList
     public void imprimePosicaoDefaul(){
         if (-1 == senhaComercial.size()){
@@ -91,5 +93,21 @@ public class Caixa {
 
     public void setNumeroDaSenha(int numeroDaSenha) {
         this.numeroDaSenha = numeroDaSenha;
+    }
+
+    public ArrayList<Integer> getSenhaComercial() {
+        return senhaComercial;
+    }
+
+    public void setSenhaComercial(ArrayList<Integer> senhaComercial) {
+        this.senhaComercial = senhaComercial;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 }
